@@ -6,6 +6,14 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+
+    firebase: {
+      apiKey: 'AIzaSyCE_TqOSJL1--yjFyVgoy2LTrEyERhsdq0',
+      authDomain: 'tokyoburgermap-6d020.firebaseapp.com',
+      databaseURL: 'https://tokyoburgermap-6d020.firebaseio.com',
+      storageBucket: '',
+    },
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
