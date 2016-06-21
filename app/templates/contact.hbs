@@ -1,1 +1,21 @@
 <h1>Contact Page</h1>
+
+{{#if responseMessage}}
+  <div class="alert alert-success">{{responseMessage}}</div>
+{{/if}}
+
+<div class="form-group has-feedback {{if isValidEmail 'has-success'}}">
+  <label for="inputEmail">Email address</label>
+  {{input type="email" id="inputEmail" value=emailAddress class="form-control" placeholder="Please type your e-mail address." autofocus="autofocus"}}
+  {{#if isValidEmail}}<span class="glyphicon glyphicon-ok form-control-feedback"></span>{{/if}}
+</div>
+
+<div class="form-group has-feedback {{if isLongerThanFive 'has-success'}}">
+  <label for="inputMessage">Message</label>
+  {{textarea id="inputMessage" class="form-control" placeholder="Your message. (At least 5 characters.)" rows="7" value=message}}
+  {{#if isLongerThanFive}}<span class="glyphicon glyphicon-ok form-control-feedback"></span>{{/if}}
+</div>
+
+<div class="form-group">
+  <button type="button" class="btn btn-primary btn-lg" disabled={{isDisabled}} {{action 'sendMessage'}}>Send message</button>
+</div>
